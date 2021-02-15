@@ -214,7 +214,7 @@ def user_detail(user_id):
 
     query = user.city
     unit = "metric"  # use "imperial" for Fahrenheit
-    api_key = "6e4ab285eb59e92254801c5595b59e5e"
+    api_key = "<your API key>"
 
     url = "https://api.openweathermap.org/data/2.5/weather?q={0}&units={1}&appid={2}".format(query, unit, api_key)
     data = requests.get(url=url)  # GET request to the OpenWeatherMap API
