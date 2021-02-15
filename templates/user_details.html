@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}User details{% endblock title %}
+
+{% block content %}
+
+<h3 id="game-title">User details</h3>
+
+<a href="/users">Back to list</a>
+<br>
+<!-- OVDJE DODAJ API -->
+
+<div class="row" id="margin-added">
+    <div class="col-4">
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            <strong>Name:</strong> {{user.name}}
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>City:</strong> {{user.city}}</li>
+            <li class="list-group-item"><strong>Country:</strong> {{ data.sys.country }}</li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-8">
+        <h4><strong>Current weather:</strong> {{ data.weather[0].description }}</h4>
+        <h5><strong>Temperature:</strong> {{ data.main.temp }} °C</h5>
+        <div><img class="weather-img" src="http://openweathermap.org/img/wn/{{ data.weather[0].icon }}@2x.png" alt=""></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock content %}

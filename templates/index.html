@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Igra{% endblock title %}
+
+{% block content %}
+
+{% if user and user.secret_number %}
+<!-- Ovo je u slučaju da je user već ulogiran -->
+
+    <h3>Welcome to:</h3>
+
+    <h1 id="game-title">Guess the secret number game</h1>
+
+    <h5>Hello, {{ user.name }}. Type in a number between 1 and 30:</h5>
+
+    <div class="col-sm-3">
+        <form method="post" action="/result">
+                <input type="text" class="form-control" name="guess" placeholder="Enter your guess">
+                <br>
+                <div id="logged-buttons">
+                    <button class="btn btn-success" type="submit">Submit</button>
+
+                    <a class="btn btn-secondary" id="btn-logout" href="/logout">Log out</a>
+                </div>
+        </form>
+    </div>
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            What are the rules?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ol>
+                <li>The computer will generate a random number between 1 and 30. Guess it in as few attempts as possible!</li>
+                <li>You have an unlimited number of tries.</li>
+                <li>If you guess wrong, the computer will give you a hint.</li>
+                <li>Once you're done, you can try again or check your highscore.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% else %}
+<!-- Ovo je ulazak na app kad user nije ulogiran. -->
+
+    <h3>Welcome to:</h3>
+
+    <h1 id="game-title">Guess the secret number game</h1>
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            What are the rules?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ol>
+                <li>The computer will generate a random number between 1 and 30. Guess it in as few attempts as possible!</li>
+                <li>You have an unlimited number of tries.</li>
+                <li>If you guess wrong, the computer will give you a hint.</li>
+                <li>Once you're done, you can try again or check your highscore.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Sign up or login
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+              <p>To play the game, you do need to have an account. You can login or make an account here!</p>
+              <p>After you make an account, your name will be displayed on the <a href="/users">list of users</a>.</p>
+
+              <div class="col-sm-3">
+                  <form method="post" action="/login">
+                    <input type="text" class="form-control" name="user-name" placeholder="Enter your name"><br>
+                    <input type="email" class="form-control" name="user-email" placeholder="Enter your email address"><br>
+                    <input type="password" class="form-control" name="user-password" placeholder="Enter your password"><br>
+
+                    <button class="btn btn-success">Submit</button>
+                  </form>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What info will be shared with others if I sign up?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+              <p>We understand your apprehension, but there is no need to worry!
+              The only thing shared will be the name you sign up with, your highscore
+              and the city you named while signing up.</p>
+
+              <p>Check out the <a href="/users">users list</a>, it has a nifty trick that lets you see what
+              the weather is like in a user's city when you click for details!</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endif %}
+
+
+
+
+{% endblock content %}

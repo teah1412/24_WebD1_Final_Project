@@ -1,0 +1,91 @@
+html {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: arial;
+    background-image: url("../img/bg01.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Grandstander', cursive;
+    font-weight: 400;
+}
+.bg-secondary {
+    background-color: #714c41 !important;
+}
+
+.container {
+    padding-right: 80px;
+    padding-left: 80px;
+    padding-top: 100px;
+    margin-bottom: 50px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.corner-login {
+    text-decoration: 700;
+    margin-right: 10px;
+}
+
+.accordion-body {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#game-title {
+    padding: 20px 50px 20px;
+    color: #9d3b10;
+}
+
+a {
+    color: #b04a1d;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #da8b68;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #a78b7e;
+    text-decoration: none;
+}
+
+.user-card {
+    font-family: 'Grandstander', cursive;
+    font-weight: 700;
+}
+
+.user-card a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.profile-card {
+    margin: 10px 0px 10px;
+}
+
+#logged-buttons {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#btn-logout {
+    margin-left: 20px;
+}
+
+.weather-img {
+    width: 150px;
+    height: auto;
+}
+
+#margin-added {
+    margin: 20px;
+}

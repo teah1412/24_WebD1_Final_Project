@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}Edit profile{% endblock title %}
+
+{% block content %}
+
+<h3 id="game-title">Edit your profile</h3>
+
+<form class="card-text" method="post">
+    <div class="card profile-card">
+        <div class="card-body">
+            <h5 class="card-title" id="game-title">Name and email settings</h5>
+
+            <div class="card-text">
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">
+                        Your name:
+                    </label>
+
+                    <div class="col-sm-10">
+                      <input class="form-control" type="text" value="{{ user.name }}" name="profile-name">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">
+                        Your email:
+                    </label>
+
+                    <div class="col-sm-10">
+                      <input class="form-control" type="email" value="{{ user.email }}" name="profile-email">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card profile-card">
+        <div class="card-body">
+            <h5 class="card-title" id="game-title">City (optional)</h5>
+
+            <div class="card-text">
+                <div>
+                    <label>
+                        Please enter your city so that it will display the weather in the user details.
+                    </label>
+
+                    <div>
+                      <input class="form-control" type="text" value="{{ user.city }}" name="profile-city">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card profile-card">
+        <div class="card-body">
+            <h5 class="card-title" id="game-title">Change password</h5>
+
+            <div class="card-text">
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">
+                        Your old password:
+                    </label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="password" name="old-password">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">
+                        Your new password:
+                    </label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="password" name="new-password">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">
+                        Confirm new password:
+                    </label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="password" name="confirm-password">
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+<button class="btn btn-secondary">Change</button>
+</form>
+
+{% endblock content %}
